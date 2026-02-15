@@ -497,12 +497,35 @@
 }
 
         @media (max-width: 900px) {
-            .main-layout { flex-direction: column; overflow-y: auto; }
-            .visual-side { height: 30vh; flex: none; }
-            .content-side { padding: 30px; }
-            .image-marquee { display: none; }
-            .grid-cards { grid-template-columns: 1fr; }
-        }
+    .main-layout { 
+        flex-direction: column; 
+        overflow-y: auto; 
+    }
+
+    .visual-side { 
+        height: 40vh; 
+        flex: none; 
+        overflow: hidden;
+    }
+
+    .content-side { 
+        padding: 25px; 
+    }
+
+    .image-marquee { 
+        display: flex;
+        animation: none; /* para não ficar pesado no celular */
+    }
+
+    .image-marquee img {
+        width: 100%;
+        filter: grayscale(0.4) brightness(0.8);
+    }
+
+    .grid-cards { 
+        grid-template-columns: 1fr; 
+    }
+}
 
         @media (max-width: 600px) {
 
@@ -709,21 +732,24 @@
             <div class="vintage-line"></div>
 
             <div class="vintage-date">
-                DESESSEIS · FEVEREIO
+                DEZESSEIS · FEVEREIRO
             </div>
 
             <p class="vintage-text">
-                Esse presente eu fiz pra você, mas não quero que sinta pressão com ele..
-                <br><br>
-                Essa é a maneira que gosto de presentear as pessoas importantes que faze parte da inha vida e além disso você é uma pessoa incrível e desde que te conheci fiquei cada vez mais interesssada em você e encantada pelo seu jeitinho, desde sua maneira de falar, os animes que você gosta, seus jogos, seu humor, sua risada, você como um todo é perfeito, meus parabéns pelos 19 anos de muitos outros meu bem!
-                <br><br>
-                Meu mais puro amor.
-            </p>
-
+            Esse presente eu fiz para você, mas não quero que sinta pressão com ele.
+        <br><br>
+            Essa é a maneira que eu gosto de presentear as pessoas importantes que fazem parte da minha vida. 
+            E, além disso, você é uma pessoa incrível. Desde que te conheci, fiquei cada vez mais interessada em você e encantada pelo seu jeitinho — sua maneira de falar, os animes que você gosta, seus jogos, seu humor, sua risada… você como um todo é perfeito.
+        <br><br>
+            Meus parabéns pelos seus 19 anos. Que venham muitos outros!
+        <br><br>
+            Com o meu mais puro amor.
+    </p>
             <div class="vintage-line"></div>
 
             <div class="vintage-sign">
-                — para você, da sua clara </div>
+              — para você, com amor, clara ₊ ⊹
+ </div>
         </div>
     </div>
 </div>
