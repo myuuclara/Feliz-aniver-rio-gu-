@@ -32,7 +32,8 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         .main-layout {
@@ -497,11 +498,48 @@
 
         @media (max-width: 900px) {
             .main-layout { flex-direction: column; overflow-y: auto; }
-            .visual-side { height: 35vh; flex: none; }
+            .visual-side { height: 30vh; flex: none; }
             .content-side { padding: 30px; }
             .image-marquee { display: none; }
             .grid-cards { grid-template-columns: 1fr; }
         }
+
+        @media (max-width: 600px) {
+
+  .modal-content {
+    padding: 20px;
+    max-width: 95%;
+    max-height: 90vh;
+  }
+
+  .vintage-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .retro-card {
+    padding: 20px;
+  }
+
+  .retro-card p {
+    font-size: 1.2rem;
+  }
+
+  .card-stack {
+    width: 260px;
+    height: 380px;
+  }
+
+  .turntable {
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-marquee img {
+    width: 100%;
+  }
+
+}
     </style>
 </head>
 <body>
@@ -598,18 +636,18 @@
 
             <div class="card-stack" id="cardStack" onclick="nextCard(event)">
                 <div class="retro-card" style="z-index: 6;">
-                    <h2>GOSTO MUSICAL</h2>
-                    <p>"desde o rock até rap/trap, tudo reflete sua personalidade incrível."</p>
+                    <h2>gosto musical</h2>
+                    <p>"desde o rock até rap/trap, tudo reflete sua personalidade e o quão incrível você é!"</p>
                     <span class="tag">IDENTIDADE</span>
                 </div>
                 <div class="retro-card" style="z-index: 5;">
                     <h2>o jeitinho que só você tem quando fala ou digita</h2>
-                    <p>"as expressões que já se tornaram as minhas favoritas de ouvir"</p>
+                    <p>"as expressões que já se tornaram as minhas favoritas de ouvir e que também passei a usar desde então"</p>
                     <span class="tag">CHARME</span>
                 </div>
                 <div class="retro-card" style="z-index: 4;">
-                    <h2>O teu aniversário</h2>
-                    <p>"um dia para celebrar a pessoa incrivel que você é e cada dia evolui mais"</p>
+                    <h2>O seu aniversário</h2>
+                    <p>"um dia para celebrar o quão perfeito, amoroso, criativo e se eu fosse listar tudo não ia caber aqui meu bem, só espero de coração que você continue sendo esse homem incrível que venho conhecendo nesses últimos meses!"</p>
                     <span class="tag">O MOTIVO</span>
                 </div>
             </div>
@@ -619,7 +657,7 @@
     <!-- MODAL DO JOGO CATCH -->
     <div id="modalGame" class="modal-overlay" onclick="closeModal('modalGame'); stopGame();">
         <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 600px;">
-            <span class="modal-close" onclick="closeModal('modalGame'); stopGame();">[FECHAR]</span>
+            <span class="modal-close" onclick="closeModal('modalGame'); stopGame();">X</span>
             <h2 style="font-family: 'Syne'; font-size: 1.1rem; color: var(--lichia); margin-bottom: 10px;">BIRTHDAY_CATCHER.EXE</h2>
             
             <div id="gameCanvasContainer">
@@ -634,7 +672,7 @@
                 <h3 id="rankTitle" style="font-family: 'Syne'; letter-spacing: 2px;">RANK</h3>
                 <span class="rank-medal" id="rankEmoji">🏆</span>
                 <p id="rankQuote" style="font-family: 'Instrument Serif'; font-style: italic; font-size: 1.2rem;"></p>
-                <button class="retro-btn" style="width: 100%; margin-top: 15px; padding: 10px;" onclick="startGame()">TENTAR DE NOVO</button>
+                <button class="retro-btn" style="width: 100%; margin-top: 15px; padding: 10px;" onclick="startGame()">TENTAR NOVAMENTE</button>
             </div>
             
             <div id="gameStartUI">
@@ -647,12 +685,12 @@
     <!-- OUTROS MODAIS -->
     <div id="modalBday" class="modal-overlay" onclick="closeModal('modalBday')">
         <div class="modal-content" onclick="event.stopPropagation()">
-            <span class="modal-close" onclick="closeModal('modalBday')">[FECHAR]</span>
+            <span class="modal-close" onclick="closeModal('modalBday')">X</span>
             <h2 style="font-family: 'Syne'; font-size: 1.1rem; color: var(--lichia); margin-bottom: 25px;">PLANOS_ANIVERSARIO.EXE</h2>
             <ul style="list-style: none; padding: 0; font-family: 'Instrument Serif'; font-size: 1.4rem;">
-                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(232,93,117,0.1); padding-bottom: 10px;">🎂 Finalmente você pode aproveitar seus amigos e eu pude te ver</li>
-                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(232,93,117,0.1); padding-bottom: 10px;">🎂 O presente é simples, mas fiz com carinho para você</li>
-                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(232,93,117,0.1); padding-bottom: 10px;">🎂 Que seu dia seja perfeito gatinho</li>
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(232,93,117,0.1); padding-bottom: 10px;">Finalmente você pode aproveitar seus amigos e eu pude te ver</li>
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(232,93,117,0.1); padding-bottom: 10px;">O presente é simples, mas fiz com carinho e pensei em cada coisa para te alegrar</li>
+                <li style="margin-bottom: 15px; border-bottom: 1px solid rgba(232,93,117,0.1); padding-bottom: 10px;">Que seu dia seja perfeito meu gatinho!</li>
                 <li>🖤</li>
             </ul>
         </div>
@@ -661,7 +699,7 @@
     <div id="modalMessage" class="modal-overlay" onclick="closeModal('modalMessage')">
         
     <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('modalMessage')">[FECHAR]</span>
+    <span class="modal-close" onclick="closeModal('modalMessage')">[X]</span>
 
 
 
@@ -671,22 +709,21 @@
             <div class="vintage-line"></div>
 
             <div class="vintage-date">
-                SIXTEENTH · FEBRUARY
+                DESESSEIS · FEVEREIO
             </div>
 
             <p class="vintage-text">
-                Esse presente eu fiz pra você, mas não quero que sinta pressão com ele.
+                Esse presente eu fiz pra você, mas não quero que sinta pressão com ele..
                 <br><br>
-                Quero que saiba que essa é a maneira que gosto de presentear as pessoas importantes para mim.Você é uma pessoa incrível e desde que te conheci fiquei cada vez mais interesssada em você, desde sua maneira de falar, os desings que você gosta, seus jogos, seu humor, sua risada, você como um todo é perfeito, meus parabéns pelos 19 anos de muitos outros meu bem.
+                Essa é a maneira que gosto de presentear as pessoas importantes que faze parte da inha vida e além disso você é uma pessoa incrível e desde que te conheci fiquei cada vez mais interesssada em você e encantada pelo seu jeitinho, desde sua maneira de falar, os animes que você gosta, seus jogos, seu humor, sua risada, você como um todo é perfeito, meus parabéns pelos 19 anos de muitos outros meu bem!
                 <br><br>
-                Sem pressão.
-                Só meu amor puro.
+                Meu mais puro amor.
             </p>
 
             <div class="vintage-line"></div>
 
             <div class="vintage-sign">
-                — for you, always...clara            </div>
+                — para você, da sua clara </div>
         </div>
     </div>
 </div>
@@ -694,7 +731,7 @@
 <!-- MODAL PLAYLIST -->
 <div id="modalPlaylist" class="modal-overlay" onclick="closeModal('modalPlaylist')">
     <div class="modal-content" onclick="event.stopPropagation()" style="text-align:center;">
-        <span class="modal-close" onclick="closeModal('modalPlaylist')">[FECHAR]</span>
+        <span class="modal-close" onclick="closeModal('modalPlaylist')">X</span>
 
         <h2 style="font-family: 'Syne'; font-size: 1.1rem; color: var(--platinum); margin-bottom: 25px;">
             NOW_PLAYING.EXE
@@ -919,7 +956,7 @@
             ctx.lineWidth = 2;
             ctx.stroke();
             ctx.font = "30px Arial";
-            ctx.fillText("🤖", playerX - 15, canvas.height - 30);
+            ctx.fillText("🦇", playerX - 15, canvas.height - 30);
 
             gameLoopId = requestAnimationFrame(gameLoop);
         }
